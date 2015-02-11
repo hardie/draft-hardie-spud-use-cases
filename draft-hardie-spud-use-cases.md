@@ -2,12 +2,11 @@
 title: Use Cases for SPUD
 abbrev: SPUD-uses
 docname: draft-hardie-spud-use-cases
-date: 2015-02-10
+date: 2015-02-11
 category: info
 
 ipr: trust200902
 area: RAI
-workgroup: DISPATCH
 keyword: Internet-Draft
 
 stand_alone: yes
@@ -22,12 +21,29 @@ author:
 
 normative:
   RFC2119:
+ 
 
 informative:
-  I-D.hildebrand-spud-prototype:
-  RFC792:
   RFC3168:
-  RFC 6347:
+  draft-hildebrand-spud-prototype:
+     target: https://tools.ietf.org/html/draft-hildebrand-spud-prototype-00
+     title: Session Protocol for User Datagrams Prototype
+     author: 
+        name: Joe Hildebrand
+        ins: J. Hildebrand
+     author:
+        name: Brian Trammel
+        ins: B. Trammel
+     date: 2015-02-09
+  ICMP:
+     target: https://tools.ietf.org/html/rfc792
+     title: Internet Control Message Protocol
+     author:
+        name: Jon Postel
+        ins:  J. Postel   
+     date: 1981-09
+  RFC6347:
+
 --- abstract
 
 SPUD is a prototype for grouping UDP packets together in a session.
@@ -45,7 +61,8 @@ information shared.
 Introduction        {#problems}
 ============
 
-SPUD{{I-D.hildebrand-spud-prototype}}
+SPUD
+{{draft-hildebrand-spud-prototype}}
 is a prototype for grouping UDP packets together in a session.
 This grouping allows on-path network devices, especially middleboxes 
 such as NATs or firewalls, to understand basic session semantics
@@ -102,7 +119,7 @@ Path to Application Use Cases   {#p2a}
 =============================   
 
 The primary use case for path to application signaling is parallel to
-the use of ICMP{{RFC792}}, in that it describes a set of conditions
+the use of ICMP {{ICMP}}, in that it describes a set of conditions
 (including errors) that applies to the datagrams as they traverse the
 path.  This usage is, however, not a pure replacement for ICMP but a
 "5-tuple ICMP".  Since policy may cause different middleboxes to be on
@@ -151,11 +168,20 @@ require cryptographics attacks or failures which are not common.
 Later versions of this document will explore the cases in which use of
 SPUD to expose those session semantics is not appropriate.
 
+IANA Considerations
+===================
+
+This document makes no requests of IANA.
+
+Acknowledgements
+================
+
+This document arose out of the IAB SEMI workshop.  In particular,
+Joe Hildebrand and Brian Trammel guided the shape of the document.
 
 --- back
 
 
-Examples  {#examples}
-========
+
 
 
