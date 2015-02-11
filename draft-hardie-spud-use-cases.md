@@ -106,7 +106,7 @@ An application may also be willing to indicate ordinal priority among
 those flows which are not bundled, if it believes the network
 assigned priority might be inappropriate (bundling all media above
 all data may not, after all, match the application semantics for
-games or other applciations).  A more complex example would be the
+games or other applications).  A more complex example would be the
 browser signaling whether it is using a particular congestion control
 algorithm (future RMCAT work vs. the "circuit breaker" baseline.)
 
@@ -164,7 +164,7 @@ plaintext.  Obviously, any exposure beyond the standard 5-tuple
 involves some information sharing which is not required for packet
 delivery.  There are potential attacks that use session start and stop
 semantics to infer known plain text for a common protocol, those they
-require cryptographics attacks or failures which are not common.
+require cryptographic attacks or failures which are not common.
 Later versions of this document will explore the cases in which use of
 SPUD to expose those session semantics is not appropriate.
 
