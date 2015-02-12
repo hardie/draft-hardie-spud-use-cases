@@ -1,7 +1,7 @@
 ---
 title: Use Cases for SPUD
 abbrev: SPUD-uses
-docname: draft-hardie-spud-use-cases
+docname: draft-hardie-spud-use-cases-01
 date: 2015-02-11
 category: info
 
@@ -26,7 +26,7 @@ normative:
 informative:
   RFC3168:
   draft-hildebrand-spud-prototype:
-     target: https://tools.ietf.org/html/draft-hildebrand-spud-prototype-00
+     target: https://tools.ietf.org/html/draft-hildebrand-spud-prototype-01
      title: Session Protocol for User Datagrams Prototype
      author: 
         name: Joe Hildebrand
@@ -46,13 +46,12 @@ informative:
 
 --- abstract
 
-SPUD is a prototype for grouping UDP packets together in a session.
-This grouping allows on-path network devices, especially middleboxes 
-such as NATs or firewalls, to understand basic session semantics
-and potentially to offer salient information about their functions
-or the path to the endpoints.  This document describes basic
-use cases for sharing that session semantic and for using the
-information shared.
+SPUD is a prototype for grouping UDP packets together.  This grouping
+allows on-path network devices, especially middleboxes such as NATs or
+firewalls, to understand basic session semantics and potentially to
+offer salient information about their functions or the path to the
+endpoints.  This document describes basic use cases for sharing that
+semantic and for using the information shared.
 
 
 
@@ -61,14 +60,12 @@ information shared.
 Introduction        {#problems}
 ============
 
-SPUD
-{{draft-hildebrand-spud-prototype}}
-is a prototype for grouping UDP packets together in a session.
-This grouping allows on-path network devices, especially middleboxes 
-such as NATs or firewalls, to understand basic session semantics
-and potentially to offer salient information about their functions
-or the path to the endpoints.  This document describes basic
-use cases for sharing that session semantic and for using the
+SPUD {{draft-hildebrand-spud-prototype}} is a prototype for grouping
+UDP packets together.  This grouping allows on-path network devices,
+especially middleboxes such as NATs or firewalls, to understand basic
+session semantics and potentially to offer salient information about
+their functions or the path to the endpoints.  This document describes
+basic use cases for sharing that semantic and for using the
 information shared
 
 Terminology          {#Terminology}
@@ -84,14 +81,14 @@ Application to Path Use Cases   {#a2p}
 
 The primary use case for application to path signaling is the
 indication of which packets traveling between two endpoints make up a
-session, along with basic session semantics (start and stop).  By
-explicitly signaling session start and stop, a flow allows middleboxes
-to use those signals for setting up and tearing down their relevant
-state (NAT bindings, firewall pinholes), rather than requiring the
-middlebox to infer this state from continued traffic.  At best, this
-would allow the application to refrain from sending heartbeat traffic,
-which might result in reduced radio utilization (and thus greater
-battery life) on mobile platforms.
+an application-layer group, along with basic related semantics (start
+and stop).  By explicitly signaling start and stop semantics, a flow
+allows middleboxes to use those signals for setting up and tearing
+down their relevant state (NAT bindings, firewall pinholes), rather
+than requiring the middlebox to infer this state from continued
+traffic.  At best, this would allow the application to refrain from
+sending heartbeat traffic, which might result in reduced radio
+utilization (and thus greater battery life) on mobile platforms.
 
 A use case suitable for experimentation might be the management of
 multiple UDP flows going between the same two endpoints.  This occurs,
@@ -158,15 +155,15 @@ perform correctly, the correct fallback is to fully encrypted
 flows like those carried by DTLS {{RFC6347}}
 
 The privacy objective here is to enable UDP-based transports whose
-payload is fully encrypted to have very simple session semantics
-exposed to the path elements which might otherwise required access to
-plaintext.  Obviously, any exposure beyond the standard 5-tuple
-involves some information sharing which is not required for packet
-delivery.  There are potential attacks that use session start and stop
-semantics to infer known plain text for a common protocol, those they
-require cryptographic attacks or failures which are not common.
-Later versions of this document will explore the cases in which use of
-SPUD to expose those session semantics is not appropriate.
+payload is fully encrypted to have very simple semantics exposed to
+the path elements which might otherwise required access to plaintext.
+Obviously, any exposure beyond the standard 5-tuple involves some
+information sharing which is not required for packet delivery.  There
+are potential attacks that use start and stop semantics to infer known
+plain text for a common protocol, those they require cryptographic
+attacks or failures which are not common.  Later versions of this
+document will explore the cases in which use of SPUD to expose those
+semantics is not appropriate.
 
 IANA Considerations
 ===================
