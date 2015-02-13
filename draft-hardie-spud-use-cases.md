@@ -48,7 +48,7 @@ informative:
 
 SPUD is a prototype for grouping UDP packets together.  This grouping
 allows on-path network devices, especially middleboxes such as NATs or
-firewalls, to understand basic session semantics and potentially to
+firewalls, to understand some basic semantics and potentially to
 offer salient information about their functions or the path to the
 endpoints.  This document describes basic use cases for sharing that
 semantic and for using the information shared.
