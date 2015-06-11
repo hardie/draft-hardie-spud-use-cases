@@ -2,7 +2,7 @@
 title: Use Cases for SPUD
 abbrev: SPUD-uses
 docname: draft-hardie-spud-use-cases-01
-date: 2015-02-11
+date: 2015-06-10
 category: info
 
 ipr: trust200902
